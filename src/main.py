@@ -20,6 +20,20 @@ import re
 from api_utils import ERROR_STATE, HIJACKED_ISSN, NOT_FOUND, get_journal_assessment, get_journal_credibility, get_paper_credibility, get_paper_metadata_v2, get_journal_metadata, get_research_paper_assessment
 
 
+# Google Analytics tracking code (replace with your own Measurement ID)
+GA_TRACKING_ID = "G-PB059ZX0H9"
+GA_SCRIPT = f"""
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={GA_TRACKING_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){{dataLayer.push(arguments);}}
+  gtag('js', new Date());
+  gtag('config', '{GA_TRACKING_ID}');
+</script>
+"""
+
+
 def validate_issn(issn):
     """Validate ISSN format (e.g., 1234-5678)."""
     pattern = r'^\d{4}-\d{4}$'
