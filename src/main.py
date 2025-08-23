@@ -49,6 +49,8 @@ def main():
         page_icon="🔎",
         layout="centered"
     )
+    # Inject Google Analytics script
+    st.markdown(GA_SCRIPT, unsafe_allow_html=True)
 
     st.title("🔎 ScholarlyTrust: Journal & Paper Credibility Assessment")
     st.write("Assess the credibility and integrity of journals (by ISSN or Name) or research papers (by DOI or Title) using trusted scholarly data sources.")
